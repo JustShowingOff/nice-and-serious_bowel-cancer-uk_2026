@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bowel Cancer UK</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="base/styles/style.css">
+</head>
+<script>
+    var adScript = document.createElement('script');
+    adScript.src = 'https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.11.5_min.js';
+    adScript.async = true;
+    adScript.onload = function() {
+        // Ad script loaded successfully
+        console.log('Ad blocker may not be active.');
+    };
+    adScript.onerror = function() {
+        // Ad script failed to load, possibly due to ad blocker
+        console.log('Ad blocker may be active.');
+        alert("Please check that you have Ad Blocking \nturned off and refresh this page"); 
+    };
+    document.head.appendChild(adScript);
+    </script>
+
+<body>
+    <div class="sidebar"><img src="base/images/logo.png" class="logo">
+        <div class="menu"></div>
+        <ul>
+         <div class="section">VARIANT 01</div>
+            <li><a href="variant-01/BCUK-variant-01-300x250_html/" class="done">300x250</a></li>
+            <li><a href="variant-01/BCUK-variant-01-728x90_html/" class="done">728x90</a></li>
+            <li><a href="variant-01/BCUK-variant-01-970x250_html/" class="done">970x250</a></li>
+
+            <div class="section">VARIANT 02</div>
+            <li><a href="variant-02/BCUK-variant-02-300x250_html/" class="done">300x250</a></li>
+            <li><a href="variant-02/BCUK-variant-02-728x90_html/" class="done">728x90</a></li>
+            <li><a href="variant-02/BCUK-variant-02-970x250_html/" class="done">970x250</a></li>
+
+            <div class="section">VARIANT 03</div>
+            <li><a href="variant-03/BCUK-variant-03-300x250_html/" class="done">300x250</a></li>
+            <li><a href="variant-03/BCUK-variant-03-728x90_html/" class="done">728x90</a></li>
+            <li><a href="variant-03/BCUK-variant-03-970x250_html/" class="done">970x250</a></li>
+          
+        </ul>
+    </div>
+    <div class="iframe"><iframe src="variant-01/BCUK-variant-01-300x250_html/"></iframe>
+        <div class="loading"></div>
+        <!-- <div class="scrubber-container">
+            <div class="scrubber-toggle"><span></span> <span></span> <span></span></div>
+            <div class="scrubber">
+                <div class="play-control"></div>
+                <div class="progress">
+                    <div class="seek-bar">
+                        <div class="play-bar"><span></span></div>
+                    </div>
+                </div>
+                <div class="time">
+                    <div class="current-time">00:00</div>
+                    <div class="time-seperator">/</div>
+                    <div class="duration">00:00</div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script> -->
+    <script type="text/javascript" src="base/js/main.js"></script>
+</body>
+
+
+</html>
