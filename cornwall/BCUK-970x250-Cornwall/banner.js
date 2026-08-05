@@ -58,13 +58,13 @@ var createAnimation = function () {
     var copy2Split = new SplitText(copy2, { type: "lines" })
 
     gsap.set(image1Container, { x: 0 })
-    gsap.set(bubble1, { scale: .5, x: -60, y: -120, transformOrigin: "100% 100%" })
-    gsap.set(bubble2, { scale: .5, x: -45, y: -120, transformOrigin: "100% 100%" })
+    gsap.set(bubble1, { scale: .5, x: -100, y: -80, transformOrigin: "100% 100%" })
+    gsap.set(bubble2, { scale: .45, x: 133, y: -100, transformOrigin: "100% 100%" })
 
-    gsap.set(copy2, { y: -70 })
+   // gsap.set(copy2, { y: -70 })
 
 
-    gsap.set(logos, { transformOrigin: "50% 100%" })
+    gsap.set(logos, { transformOrigin: "75% 50%" })
 
 
     //     //END LAYOUT//
@@ -73,28 +73,26 @@ var createAnimation = function () {
 
         .from(bubble1, { duration: .35, scale: 0, transformOrigin: "100% 100%", ease: "back.out(1.7)" }, "frame1")
 
-        .to(image1Container, { duration: 4, x: -110, ease: "power1.inOut" }, "frame1")
+        .from(image1Container, { duration: 4.5, x:"+=20", ease: "none" }, "frame1")
 
-        .to(bubble1, { duration: .3, alpha: 0, ease: "none" }, "frame1+=2.5")
-
-        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "100% 100%", ease: "back.out(1.7)" }, "frame1+=2.8")
+        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "100% 100%", ease: "back.out(1.7)" }, "frame1+=1.75")
 
 
-        .addLabel("frame2", "+=0.5")
+        .addLabel("frame2", "-=0.5")
 
-        .to(image1Container, { duration: 1, x: -400, alpha: 0, ease: "power1.inOut" }, "frame2")
+        .to(image1Container, { duration: 1, x:"-=50%", alpha: 0, ease: "power1.inOut" }, "frame2")
 
-        .from(cover1, { duration: 1, x: "+=300", alpha: 0, ease: "power1.inOut" }, "frame2")
+        .from(cover1, { duration: 1, x: "+=643", alpha: 0, ease: "power1.inOut" }, "frame2")
 
-        .from(copy1Split.words, { duration: .5, y: "+=100", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame2+=0.75")
+        .from(copy1Split.words, { duration: .5, y: "+=75", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame2+=0.75")
 
 
 
         .addLabel("frame3", "+=2")
 
-        .from(cover2, { duration: 1, x: "+=300", ease: "power1.inOut" }, "frame3")
+        .from(cover2, { duration: 1, x: "+=643", ease: "power1.inOut" }, "frame3")
 
-        .from(image2Container, { duration: 1, x: "-=300", ease: "power1.inOut" }, "frame3+=0.5")
+        .from(image2Container, { duration: 1, alpha: 0, x: "-=10%", ease: "power1.inOut" }, "frame3+=0.5")
 
         .from(copy2Split.lines, { duration: .5, y: "+=100", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame3+=1")
 
@@ -104,15 +102,15 @@ var createAnimation = function () {
 
         .to([copy2, image2Container], { duration: 1, x: "-=300", alpha: 0, ease: "power1.inOut" }, "frame4")
 
-        .from(cover3, { duration: 1, x: "+=300", ease: "power1.inOut" }, "frame4")
+        .from(cover3, { duration: 1, x: "+=100%", ease: "power1.inOut" }, "frame4")
 
-        .from(cta, { duration: .35, scale: .5, alpha: 0, ease: "power1.out" }, "frame4+=.75")
+        .from(cta, { duration: .35, scale: .5, alpha: 0, ease: "power1.out" }, "frame4+=1")
 
-        .from(logos, { duration: .35, scale: .75, alpha: 0, ease: "power1.out" }, "frame4+=.9")
+        .from(logos, { duration: .35, scale: .75, alpha: 0, ease: "power1.out" }, "frame4+=1.2")
 
 
 
-    //         // timeline.seek(5).pause();
+    //timeline.seek(3).pause();
 
     gsap.set(loading, { autoAlpha: 0, "display": "none" });
     gsap.set(content, { autoAlpha: 1 });
