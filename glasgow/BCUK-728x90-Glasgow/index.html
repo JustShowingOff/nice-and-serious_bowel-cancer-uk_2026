@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Google</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="ad.size" content="width=728,height=90">
+	<link rel="preload" href="neris-webfont.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="neris-webfont.woff" as="font" crossorigin="anonymous">
+
+	<link rel="preload" href="neris_black-webfont.woff2" as="font" crossorigin="anonymous">
+	<link rel="preload" href="neris_black-webfont.woff" as="font" crossorigin="anonymous">
+
+
+	<script type="text/javascript">
+		var clickTag = "http://www.google.com";
+	</script>
+
+	<style type="text/css">
+		@font-face {
+			font-family: 'nerisregular';
+			src: url('neris-webfont.woff2') format('woff2'),
+				url('neris-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: 'nerisbold';
+			src: url('neris_black-webfont.woff2') format('woff2'),
+				url('neris_black-webfont.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+			font-display: swap;
+		}
+
+
+		.lds-ring,
+		.lds-ring div {
+			box-sizing: border-box;
+		}
+
+		.lds-ring {
+			display: inline-block;
+			position: relative;
+			width: 40px;
+			height: 40px;
+		}
+
+		.lds-ring div {
+			box-sizing: border-box;
+			display: block;
+			position: absolute;
+			width: 32px;
+			height: 32px;
+			margin: 4px;
+			border: 4px solid #0F525C;
+			border-radius: 50%;
+			animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+			border-color: #0F525C transparent transparent transparent;
+		}
+
+		.lds-ring div:nth-child(1) {
+			animation-delay: -0.45s;
+		}
+
+		.lds-ring div:nth-child(2) {
+			animation-delay: -0.3s;
+		}
+
+		.lds-ring div:nth-child(3) {
+			animation-delay: -0.15s;
+		}
+
+		@keyframes lds-ring {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+
+
+		body,
+		body {
+			vertical-align: baseline;
+			border: 0;
+			outline: 0;
+			padding: 0;
+			margin: 0;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-rendering: optimizeLegibility;
+
+		}
+
+		/* Div layer for the entire banner. */
+		#container_dc {
+			position: absolute;
+			width: 728px;
+			height: 90px;
+			top: 0;
+			left: 0;
+			margin: auto;
+			overflow: hidden;
+			background: #FFCE57;
+		}
+
+
+		/*///////////////////////// THIS IS FOR PREVIEW ONLY SO REMOVE FOR FINAL DELIVERY ///////////////////////////////*/
+
+		#container_dc {
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+
+		#loading_image_dc {
+			position: absolute;
+			left: 50%;
+			margin-left: -16px;
+			top: 50%;
+			margin-top: -16px;
+		}
+
+
+		/* Invisible button for background clickthrough. */
+		#background_exit_dc {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+			background-color: rgba(0, 0, 0, 0);
+			z-index: 600;
+		}
+
+		.border {
+			border: 1px solid #585858;
+			box-sizing: border-box;
+		}
+
+		#content_dc {
+			opacity: 0;
+		}
+
+
+		.regular {
+			font-family: 'nerisregular';
+			text-align: center;
+			position: relative;
+			text-align: center;
+
+		}
+
+		.bold {
+			font-family: 'nerisbold';
+			text-align: center;
+			position: relative;
+			text-align: center;
+		}
+
+		#copy1Container {
+			line-height: 1.1;
+			text-align: center;
+			width: 480px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: absolute;
+			font-size: 18px;
+			align-items: center;
+			text-align: center;
+		}
+
+
+		#copy2Container {
+			line-height: 1.1;
+			text-align: center;
+			width: 480px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: absolute;
+			font-size: 16px;
+			align-items: center;
+			text-align: center;
+		}
+
+
+
+
+		#cover1 {
+			background-color: #31B7C0;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+			position: absolute;
+		}
+
+		#cover2 {
+			background-color: #FFCE57;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+			position: absolute;
+		}
+
+		#cover3 {
+			background-color: #0F525C;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0px;
+			position: absolute;
+		}
+
+
+		.cta-lozenge {
+			left: 50%;
+			top: 17px;
+			transform: translateX(-50%);
+			border: none;
+			padding: 15px 55px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			margin: 2px 2px;
+			border-radius: 100px;
+			font-size: 16px;
+			box-shadow: 3px 3px 0 #000;
+		}
+
+		#cta-container {
+			width: 316px;
+			height: 100%;
+			position: absolute;
+		}
+
+		#cta {
+			background-color: #ffce57;
+			color: #1e1236;
+		}
+
+		#cta-shadow {
+			background-color: #1e1236;
+
+		}
+
+		#footer {
+			background-color: #0f525c;
+			width: 248px;
+			height: 100%;
+			top: 0px;
+			right: 0px;
+			position: absolute;
+		}
+
+
+		#image1Container {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+
+		#image1 {
+			background-image: url("image1.png");
+			background-repeat: no-repeat;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+
+		}
+
+
+		#image2Container {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+
+		#image2 {
+			background-image: url("image2.png");
+			background-repeat: no-repeat;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+
+		}
+
+		#bubble1 {
+			top: 0px;
+			left: 0px;
+			background-image: url("bubble1.png");
+			background-repeat: no-repeat;
+			width: 484px;
+			height: 135px;
+			background-size: cover;
+			position: absolute;
+
+		}
+
+
+		/* #bubble2 {
+			top: 0px;
+			left: 0px;
+			background-image: url("bubble2.png");
+			background-repeat: no-repeat;
+			width: 98px;
+			height: 94px;
+			background-size: cover;
+			position: absolute;
+
+		} */
+
+
+		#image2 {
+			background-image: url("image2.png");
+			background-repeat: no-repeat;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+
+		}
+
+		#logo {
+			background-image: url("logo.png");
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			position: absolute;
+
+		}
+
+		#logos {
+			background-image: url("logos.png");
+			background-repeat: no-repeat;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			position: absolute;
+
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+
+	<div id="container_dc">
+		<div id="loading_dc"><!-- Loading Animation -->
+			<div id="loading_image_dc">
+				<div class="lds-ring">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="content_dc">
+
+
+
+			<div id="image1Container">
+				<div id="image1"></div>
+				<div id="bubble1"></div>
+				
+			</div>
+
+			
+           <div id="cover1"></div>
+
+
+			<div id="copy1Container">
+				<div id="copy1" class="bold">Bowel screening is for everyone 50-74.</div>
+			</div>
+
+
+			<div id="cover2"></div>
+
+
+			<div id="copy2Container">
+				<div id="copy2" class="bold">It's always worth doing. Bowel cancer<br>is treatable when found early.</div>
+			</div>
+
+			<div id="image2Container">
+				<div id="image2"></div>
+				<!-- <div id="bubble2"></div> -->
+			</div>
+
+
+			<div id="footer"></div>
+			<div id="logo"></div>
+
+			<div id="cover3"></div>
+
+			<div id="logos"></div>
+
+
+			<div id="cta-container">
+				<div id="cta" class="bold cta-lozenge">Find out more</div>
+
+			</div>
+
+
+
+		</div>
+
+
+		<div id="background_exit_dc" class="border"></div>
+
+
+</body>
+
+
+<script src="gsap.min.js"></script>
+<script src="SplitText.min.js"></script>
+<script src="banner.js"></script>
+
+<script>
+
+</script>
+
+</html>
