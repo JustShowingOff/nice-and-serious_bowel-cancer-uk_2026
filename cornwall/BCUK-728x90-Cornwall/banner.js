@@ -82,7 +82,7 @@ var createAnimation = function () {
 
         .to(image1Container, { duration: 1, x:"-=50%", alpha: 0, ease: "power1.inOut" }, "frame2")
 
-        .from(cover1, { duration: 1, x: "+=643", alpha: 0, ease: "power1.inOut" }, "frame2")
+        .from(cover1, { duration: 1, x: "+=643", ease: "power1.inOut" }, "frame2")
 
         .from(copy1Split.words, { duration: .5, y: "+=50", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame2+=0.75")
 
