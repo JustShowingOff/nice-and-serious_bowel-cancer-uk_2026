@@ -3,7 +3,7 @@
 var loops = 3;
 var currentLoop = 1;
 var container, content, bgExit, loading, timeline, animationTimeline;
-var image1, image2, image1Container, image2Container, bubble1, bubble2, logo, logos, cover1, cover2, cover3, copy1, copy2, cta
+var image1, image2, image1Container, image2Container, bubble1, bubble2, bubble3, logo, logos, cover1, cover2, cover3, copy1, copy2, cta, footer
 
 
 gsap.registerPlugin(SplitText);
@@ -21,6 +21,7 @@ var init = function () {
     image2Container = document.getElementById('image2Container');
     bubble1 = document.getElementById('bubble1');
     bubble2 = document.getElementById('bubble2');
+    bubble3 = document.getElementById('bubble3');
     logo = document.getElementById('logo');
     logos = document.getElementById('logos');
     cover1 = document.getElementById('cover1');
@@ -29,12 +30,12 @@ var init = function () {
     copy1 = document.getElementById('copy1');
     copy2 = document.getElementById('copy2');
     cta = document.getElementById('cta');
-    // 
+    footer = document.getElementById('footer');
 
 
     // 
     timeline = gsap.timeline({
-        id: "timeline", repeat: 1, delay: 1, repeatDelay: 4, onRepeat: function () {
+        id: "timeline", repeat: 1, delay: 1, repeatDelay: 3, onRepeat: function () {
             //animationTimeline.play(0)
         }, onStart: function () {
             // animationTimeline.play(0)
@@ -46,7 +47,7 @@ var init = function () {
     createAnimation();
     addListeners();
 
-    timeline.timeScale(1.07)
+    timeline.timeScale(1.025)
     //animationTimeline.timeScale(1.3)
 };
 
@@ -57,67 +58,61 @@ var createAnimation = function () {
 
     var copy2Split = new SplitText(copy2, { type: "lines" })
 
-    gsap.set(image1Container, { x: 0 })
-    gsap.set(bubble1, { scale: .5, x: 187, y: 80, transformOrigin: "0% 100%" })
-    gsap.set(bubble2, { scale: .45, x: 47, y: -100, transformOrigin: "100% 100%" })
+    gsap.set([bubble1, bubble3], { scale: .5, x: -80, y: -86, transformOrigin: "50% 100%" })
+    gsap.set(bubble2, { scale: .5, x:160, y: -35, transformOrigin: "50% 100%" })
+    gsap.set(logos, { transformOrigin: "50% 100%" })
 
-   // gsap.set(copy2, { y: -70 })
-
-    gsap.set(image1Container, { y: -156 })
-    gsap.set(image2Container, { y: -25 })
-
-
-    gsap.set(logos, { transformOrigin: "75% 50%" })
+     gsap.set(copy2, { y:-10})
 
 
     //     //END LAYOUT//
 
     timeline.addLabel("frame1")
 
-        .from(bubble1, { duration: .35, scale: 0, transformOrigin: "0% 100%", ease: "back.out(1.7)" }, "frame1")
-
-        .to(image1Container, { duration: 3, y:0, ease: "power1.inOut" }, "frame1+=1")
+       .from(bubble1, { duration: .35, scale: 0, transformOrigin: "50% 100%", ease: "back.out(1.7)" }, "frame1")
 
 
-        .to(bubble1, { duration: .2, alpha: 0, transformOrigin: "0% 100%", ease: "none" }, "frame1+=2.5")
+        .to(bubble1, { duration: .1, alpha: 0, transformOrigin: "50% 100%", ease: "none" }, "frame1+=2.5")
+
+        .from(bubble3, { duration: .35, scale: 0, transformOrigin: "50% 100%", ease: "back.out(1.7)" }, "frame1+=2.6")
 
 
-        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "100% 100%", ease: "back.out(1.7)" }, "frame1+=3.5")
+        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "50% 100%", ease: "back.out(1.7)" }, "frame1+=3.5")
 
 
-        .addLabel("frame2","+=1.25")
+        .addLabel("frame2", "+=1.25")
 
-        .to(image1Container, { duration: 1, x:"-=50%", alpha: 0, ease: "power1.inOut" }, "frame2")
+        .to(image1Container, { duration: 1, x: -300, alpha: 0, ease: "power1.inOut" }, "frame2")
 
-        .from(cover1, { duration: 1, x: "+=643", ease: "power1.inOut" }, "frame2")
+        .from(cover1, { duration: 1, x: "+=300", ease: "power1.inOut" }, "frame2")
 
-        .from(copy1Split.words, { duration: .5, y: "+=75", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame2+=0.75")
+        .from(copy1Split.words, { duration: .5, y: "+=100", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame2+=0.75")
 
 
 
         .addLabel("frame3", "+=2")
 
-        .from(cover2, { duration: 1, x: "+=643", ease: "power1.inOut" }, "frame3")
+        .from([cover2,footer], { duration: 1, x: "+=300", ease: "power1.inOut"}, "frame3")
 
-        .from(image2Container, { duration: 1, alpha: 0, y: 5, ease: "power1.inOut" }, "frame3+=0.5")
+        .from([image2Container,logo], { duration: 1, x: "+=300", ease: "power1.inOut"}, "frame3+=0.1")
 
-        .from(copy2Split.lines, { duration: .5, y: "+=100", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame3+=1")
-
-
-
-        .addLabel("frame4", "+=2")
-
-        .to([copy2, image2Container], { duration: 1, x: "-=300", alpha: 0, ease: "power1.inOut" }, "frame4")
-
-        .from(cover3, { duration: 1, x: "+=100%", ease: "power1.inOut" }, "frame4")
-
-        .from(cta, { duration: .35, scale: .5, alpha: 0, ease: "power1.out" }, "frame4+=1")
-
-        .from(logos, { duration: .35, scale: .75, alpha: 0, ease: "power1.out" }, "frame4+=1.2")
+        .from(copy2Split.lines, { duration: .5, y: "+=50", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame3+=1.2")
 
 
 
-        //timeline.seek(4).pause();
+        .addLabel("frame4", "+=2.5")
+
+        .to([copy2, image2Container, logo], { duration: 1, x: "-=300", alpha: 0, ease: "power1.inOut" }, "frame4")
+
+        .from(cover3, { duration: 1, x: "+=300", ease: "power1.inOut" }, "frame4")
+
+        .from(cta, { duration: .35, scale: .5, alpha: 0, ease: "power1.out" }, "frame4+=.75")
+
+        .from(logos, { duration: .35, scale: .75, alpha: 0, ease: "power1.out" }, "frame4+=.9")
+
+
+
+       //timeline.seek(0.2).pause();
 
     gsap.set(loading, { autoAlpha: 0, "display": "none" });
     gsap.set(content, { autoAlpha: 1 });

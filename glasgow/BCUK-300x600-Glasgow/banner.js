@@ -73,11 +73,11 @@ var createAnimation = function () {
 
         .from(bubble1, { duration: .35, scale: 0, transformOrigin: "50% 100%", ease: "back.out(1.7)" }, "frame1")
 
-        .to(image1Container, { duration: 3, x: -295, ease: "power1.inOut" }, "frame1+=0.55")
+        .to(image1Container, { duration: 4, x: -295, ease: "power1.inOut" }, "frame1+=1")
 
-        .to(bubble1, { duration: .3, alpha: 0, ease: "none" }, "frame1+=3.5")
+        .to(bubble1, { duration: .2, alpha: 0, ease: "none" }, "frame1+=2.2")
 
-        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "100% 100%", ease: "back.out(1.7)" }, "frame1+=3")
+        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "100% 100%", ease: "back.out(1.7)" }, "frame1+=3.5")
 
 
         .addLabel("frame2", "+=0.75")

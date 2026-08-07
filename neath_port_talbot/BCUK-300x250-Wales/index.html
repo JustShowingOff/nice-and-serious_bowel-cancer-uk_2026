@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Google</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="ad.size" content="width=970,height=250">
+	<meta name="ad.size" content="width=300,height=250">
 	<link rel="preload" href="neris-webfont.woff2" as="font" crossorigin="anonymous">
 	<link rel="preload" href="neris-webfont.woff" as="font" crossorigin="anonymous">
 
@@ -102,7 +102,7 @@
 		/* Div layer for the entire banner. */
 		#container_dc {
 			position: absolute;
-			width: 970px;
+			width: 300px;
 			height: 250px;
 			top: 0;
 			left: 0;
@@ -174,13 +174,13 @@
 		#copy1Container {
 			line-height: 1.1;
 			text-align: center;
-			width: 643px;
+			width: 100%;
 			height: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			position: absolute;
-			font-size: 32px;
+			font-size: 28px;
 			align-items: center;
 			text-align: center;
 		}
@@ -189,13 +189,13 @@
 		#copy2Container {
 			line-height: 1.1;
 			text-align: center;
-			width: 643px;
-			height: 100%;
+			width: 100%;
+			height: 178px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			position: absolute;
-			font-size: 24px;
+			font-size: 17px;
 			align-items: center;
 			text-align: center;
 		}
@@ -231,25 +231,21 @@
 		}
 
 
+
+
 		.cta-lozenge {
 			left: 50%;
-			top: 86px;
+			top: 41px;
 			transform: translateX(-50%);
 			border: none;
-			padding: 21px 81px;
+			padding: 15px 55px;
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
 			margin: 2px 2px;
 			border-radius: 100px;
-			font-size: 24px;
+			font-size: 17px;
 			box-shadow: 3px 3px 0 #000;
-		}
-
-		#cta-container {
-			width: 468px;
-			height: 100%;
-			position: absolute;
 		}
 
 		#cta {
@@ -264,10 +260,10 @@
 
 		#footer {
 			background-color: #0f525c;
-			width: 327px;
-			height: 100%;
-			top: 0px;
-			right: 0px;
+			width: 100%;
+			height: 72px;
+			bottom: 0px;
+			left: 0px;
 			position: absolute;
 		}
 
@@ -312,8 +308,8 @@
 			left: 0px;
 			background-image: url("bubble1.png");
 			background-repeat: no-repeat;
-			width: 300px;
-			height: 188px;
+			width: 347px;
+			height: 196px;
 			background-size: cover;
 			position: absolute;
 
@@ -325,8 +321,21 @@
 			left: 0px;
 			background-image: url("bubble2.png");
 			background-repeat: no-repeat;
-			width: 312px;
-			height: 216px;
+			width: 142px;
+			height: 142px;
+			background-size: cover;
+			position: absolute;
+
+		}
+
+
+		#bubble3 {
+			top: 0px;
+			left: 0px;
+			background-image: url("bubble3.png");
+			background-repeat: no-repeat;
+			width: 347px;
+			height: 195px;
 			background-size: cover;
 			position: absolute;
 
@@ -388,37 +397,42 @@
 
 		<div id="content_dc">
 
+		
 
 
 			<div id="image1Container">
 				<div id="image1"></div>
 				<div id="bubble1"></div>
 				<div id="bubble2"></div>
+				<div id="bubble3"></div>
 			</div>
 
-			
-           <div id="cover1"></div>
+			<div id="cover1"></div>
+
+		
 
 
 			<div id="copy1Container">
-				<div id="copy1" class="bold">Tell your Community<br>Pharmacist instead.</div>
+				<div id="copy1" class="bold">Tell your<br>GP instead.<br><span class="regular">Ask for a simple<br>at-home test.</span></div>
 			</div>
 
 
 			<div id="cover2"></div>
 
+					<div id="footer"></div>
+			<div id="logo"></div>
 
-			<div id="copy2Container">
-				<div id="copy2" class="bold">It's probably nothing serious.<br>Bowel cancer is treatable<br>when found early.</div>
-			</div>
+
+
+			
 
 			<div id="image2Container">
 				<div id="image2"></div>
 			</div>
 
-
-			<div id="footer"></div>
-			<div id="logo"></div>
+			<div id="copy2Container">
+				<div id="copy2" class="bold">It's probably nothing serious.<br>Bowel cancer is treatable<br>when found early.</div>
+			</div>
 
 			<div id="cover3"></div>
 
