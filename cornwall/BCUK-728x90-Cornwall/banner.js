@@ -58,8 +58,8 @@ var createAnimation = function () {
     var copy2Split = new SplitText(copy2, { type: "lines" })
 
     gsap.set(image1Container, { x: 0 })
-    gsap.set(bubble1, { scale: .5, x: 180, y: 14, transformOrigin: "0% 0%" })
-    gsap.set(bubble2, { scale: .5, x: 382, y: -42, transformOrigin: "50% 100%" })
+    gsap.set(bubble1, { scale: .5, x: 145, y: 11, transformOrigin: "0% 0%" })
+    gsap.set(bubble2, { scale: .5, x: 371, y: -39, transformOrigin: "50% 100%" })
 
    // gsap.set(copy2, { y: -70 })
 
@@ -71,12 +71,13 @@ var createAnimation = function () {
 
     timeline.addLabel("frame1")
 
-        .from(bubble1, { duration: .35, scale: 0, transformOrigin: "0% 0%", ease: "back.out(1.7)" }, "frame1")
+         .from(bubble1, { duration: .35, scale: 0, transformOrigin: "0% 0%", ease: "back.out(1.7)" }, "frame1")
 
-        .from(image1Container, { duration: 4.5, x:"+=20", ease: "none" }, "frame1")
+         .from(image1Container, { duration: 4.5, x:"+=20", ease: "none" }, "frame1")
+
+        .from(bubble2, { duration: .35, scale: 0, transformOrigin: "50% 100%", ease: "back.out(1.7)" }, "frame1+=1.75")
 
        
-
 
         .addLabel("frame2", "-=1.5")
 
@@ -90,13 +91,14 @@ var createAnimation = function () {
 
         .addLabel("frame3", "+=2")
 
-        .from(cover2, { duration: 1, x: "+=643", ease: "power1.inOut" }, "frame3")
+         .from(cover2, { duration: 1, x: "+=643", ease: "power1.inOut" }, "frame3")
 
-        .from(image2Container, { duration: 1, alpha: 0, x: "+=100", ease: "power1.inOut" }, "frame3+=0.5")
+         .from(image2Container, { duration: 1, alpha: 0, x: "+=50", ease: "power.out" }, "frame3+=0.5")
 
-         .from(bubble2, { duration: .35, scale: 0, transformOrigin: "50% 100%", ease: "back.out(1.7)" }, "frame3+=1.25")
+         .from(copy2Split.lines, { duration: .5, y: "+=50", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame3+=1")
 
-        .from(copy2Split.lines, { duration: .5, y: "+=50", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame3+=1.5")
+        
+
 
 
 
@@ -112,7 +114,7 @@ var createAnimation = function () {
 
 
 
-   // timeline.seek(12).pause();
+    //timeline.seek(3).pause();
 
     gsap.set(loading, { autoAlpha: 0, "display": "none" });
     gsap.set(content, { autoAlpha: 1 });
