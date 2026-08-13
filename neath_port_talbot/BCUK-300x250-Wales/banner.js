@@ -3,7 +3,7 @@
 var loops = 3;
 var currentLoop = 1;
 var container, content, bgExit, loading, timeline, animationTimeline;
-var image1, image2, image1Container, image2Container, bubble1, bubble2, bubble3, logo, logos, cover1, cover2, cover3, copy1, copy2, cta, footer
+var image1, image2, image1Container, image2Container, bubble1, bubble2, bubble3, logo, logos, cover1, cover2, cover3, copy1, copy1a, copy2, copy2a, cta, footer
 
 
 gsap.registerPlugin(SplitText);
@@ -28,14 +28,16 @@ var init = function () {
     cover2 = document.getElementById('cover2');
     cover3 = document.getElementById('cover3');
     copy1 = document.getElementById('copy1');
+    copy1a = document.getElementById('copy1a');
     copy2 = document.getElementById('copy2');
+    copy2a = document.getElementById('copy2a');
     cta = document.getElementById('cta');
     footer = document.getElementById('footer');
 
 
     // 
     timeline = gsap.timeline({
-        id: "timeline", repeat: 1, delay: 1, repeatDelay: 3, onRepeat: function () {
+        id: "timeline", repeat: 0, delay: 0.25, repeatDelay: 3, onRepeat: function () {
             //animationTimeline.play(0)
         }, onStart: function () {
             // animationTimeline.play(0)
@@ -47,7 +49,7 @@ var init = function () {
     createAnimation();
     addListeners();
 
-    timeline.timeScale(1.025)
+    //timeline.timeScale(1.025)
     //animationTimeline.timeScale(1.3)
 };
 
@@ -56,13 +58,19 @@ var createAnimation = function () {
 
     var copy1Split = new SplitText(copy1, { type: "words" })
 
+    var copy1aSplit = new SplitText(copy1a, { type: "words" })
+
     var copy2Split = new SplitText(copy2, { type: "lines" })
+
+    var copy2aSplit = new SplitText(copy2a, { type: "lines" })
 
     gsap.set([bubble1, bubble3], { scale: .5, x: -80, y: -86, transformOrigin: "50% 100%" })
     gsap.set(bubble2, { scale: .5, x:160, y: -35, transformOrigin: "50% 100%" })
     gsap.set(logos, { transformOrigin: "50% 100%" })
 
-     gsap.set(copy2, { y:-10})
+     gsap.set([copy2,copy2a], { y:-15})
+
+     gsap.set([copy1a, copy2a], { display: "none" })
 
 
     //     //END LAYOUT//
@@ -88,9 +96,15 @@ var createAnimation = function () {
 
         .from(copy1Split.words, { duration: .5, y: "+=100", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame2+=0.75")
 
+        .to(copy1,{ duration: 0.1, autoAlpha: 0, ease: "none", display: "none" }, "frame2+=3.25")
+
+         .set(copy1a, { display: "block"})
+
+         .from(copy1aSplit.words, { duration: .5, y: "+=100", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } })
 
 
-        .addLabel("frame3", "+=2")
+
+        .addLabel("frame3", "+=1.5")
 
         .from([cover2,footer], { duration: 1, x: "+=300", ease: "power1.inOut"}, "frame3")
 
@@ -98,11 +112,19 @@ var createAnimation = function () {
 
         .from(copy2Split.lines, { duration: .5, y: "+=50", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } }, "frame3+=1.2")
 
+        .to(copy2,{ duration: 0.1, autoAlpha: 0, ease: "none", display: "none" }, "frame3+=3.75")
+
+        .set(copy2a, { display: "block"})
+
+        .from(copy2aSplit.lines, { duration: .5, y: "+=50", alpha: 0, ease: "power1.out", stagger: { amount: 0.35 } })
 
 
-        .addLabel("frame4", "+=2.5")
 
-        .to([copy2, image2Container, logo], { duration: 1, x: "-=300", alpha: 0, ease: "power1.inOut" }, "frame4")
+
+
+        .addLabel("frame4", "+=2")
+
+        .to([copy2a, image2Container, logo], { duration: 1, x: "-=300", alpha: 0, ease: "power1.inOut" }, "frame4")
 
         .from(cover3, { duration: 1, x: "+=300", ease: "power1.inOut" }, "frame4")
 

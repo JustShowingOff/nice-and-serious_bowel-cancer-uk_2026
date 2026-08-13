@@ -34,7 +34,7 @@ var init = function () {
 
     // 
     timeline = gsap.timeline({
-        id: "timeline", repeat: 1, delay: 1, repeatDelay: 4, onRepeat: function () {
+        id: "timeline", repeat: 1, delay: 0.25, repeatDelay: 4, onRepeat: function () {
             //animationTimeline.play(0)
         }, onStart: function () {
             // animationTimeline.play(0)
@@ -58,8 +58,8 @@ var createAnimation = function () {
     var copy2Split = new SplitText(copy2, { type: "lines" })
 
     gsap.set(image1Container, { x: 0 })
-    gsap.set(bubble1, { scale: .5, x: -163, y: -120, transformOrigin: "100% 100%" })
-    gsap.set(bubble2, { scale: .5, x: 278, y: -59, transformOrigin: "100% 100%" })
+    gsap.set(bubble1, { scale: .5, x: -100, y: -80, transformOrigin: "100% 100%" })
+    gsap.set(bubble2, { scale: .45, x: 133, y: -100, transformOrigin: "100% 100%" })
 
    // gsap.set(copy2, { y: -70 })
 

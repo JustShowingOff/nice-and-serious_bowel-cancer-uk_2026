@@ -28,7 +28,7 @@ var init = function () {
 
     // 
     timeline = gsap.timeline({
-        id: "timeline", repeat: 1, delay: 1, repeatDelay: 4, onRepeat: function () {
+        id: "timeline", repeat: 1, delay: 0.25, repeatDelay: 4, onRepeat: function () {
             //animationTimeline.play(0)
         }, onStart: function () {
             // animationTimeline.play(0)
