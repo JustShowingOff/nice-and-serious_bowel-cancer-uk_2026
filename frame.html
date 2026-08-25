@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    #content {
+        display: block;
+        border: 0;
+        flex: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="content"></div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const fileURL = params.get('file');
+
+    const container = document.getElementById('content');
+
+    if (fileURL) {
+
+        // Detect file type from the URL
+        const extension = fileURL
+            .split('?')[0]
+            .split('#')[0]
+            .split('.')
+            .pop()
+            .toLowerCase();
+
+        const imageTypes = [
+            'jpg',
+            'jpeg',
+            'png',
+            'gif',
+            'webp',
+            'avif',
+            'svg'
+        ];
+
+        if (imageTypes.includes(extension)) {
+
+            // -----------------------------
+            // IMAGE
+            // -----------------------------
+
+            const image = document.createElement('img');
+
+            image.onload = () => {
+                container.replaceWith(image);
+
+                image.style.display = 'block';
+                image.style.maxWidth = '100vw';
+                image.style.maxHeight = '100vh';
+                image.style.width = 'auto';
+                image.style.height = 'auto';
+            };
+
+            image.src = fileURL;
+
+        } else {
+
+            // -----------------------------
+            // HTML BANNER
+            // -----------------------------
+
+            const iframe = document.createElement('iframe');
+
+            iframe.id = 'banner';
+            iframe.src = fileURL;
+
+            container.replaceWith(iframe);
+
+            iframe.addEventListener('load', () => {
+
+                const doc = iframe.contentDocument;
+
+                if (!doc) {
+                    console.error('Cannot access banner document.');
+                    return;
+                }
+
+                const width = Math.max(
+                    doc.body.scrollWidth,
+                    doc.documentElement.scrollWidth,
+                    doc.body.offsetWidth,
+                    doc.documentElement.offsetWidth
+                );
+
+                const height = Math.max(
+                    doc.body.scrollHeight,
+                    doc.documentElement.scrollHeight,
+                    doc.body.offsetHeight,
+                    doc.documentElement.offsetHeight
+                );
+
+                iframe.style.width = width + 'px';
+                iframe.style.height = height + 'px';
+                iframe.style.border = '0';
+                iframe.style.display = 'block';
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
